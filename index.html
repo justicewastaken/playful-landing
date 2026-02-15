@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Paid to Scroll - Playful Rewards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: #0a1a1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Page 1 Styles */
+        .page-1 {
+            display: block;
+        }
+
+        .page-1.hidden {
+            display: none;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .logo-wrapper {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.2);
+            overflow: hidden;
+        }
+
+        .tiktok-icon {
+            width: 55px;
+            height: 55px;
+        }
+        
+        .playful-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+        }
+
+        .multiply {
+            font-size: 28px;
+            color: #00ff9d;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 52px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .title-get {
+            color: #c0d4d1;
+        }
+
+        .title-paid {
+            color: #c0d4d1;
+        }
+
+        .title-to {
+            color: #c0d4d1;
+        }
+
+        .title-scroll {
+            color: #00ff9d;
+        }
+
+        .subtitle {
+            color: #8a9a95;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 14px;
+        }
+
+        .btn-primary {
+            background: #00ff9d;
+            color: #0a1a1a;
+        }
+
+        .btn-primary:hover {
+            background: #00e68a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 157, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-subtext {
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 6px;
+            opacity: 0.7;
+        }
+
+        /* Page 2 Styles */
+        .page-2 {
+            display: none;
+        }
+
+        .page-2.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .checkmark-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .checkmark {
+            width: 70px;
+            height: 70px;
+            background: #00ff9d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #0a1a1a;
+            font-weight: bold;
+        }
+
+        .success-title {
+            font-size: 46px;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        .success-title .gray {
+            color: #c0d4d1;
+        }
+
+        .success-title .green {
+            color: #00ff9d;
+        }
+
+        .success-subtitle {
+            color: #8a9a95;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .download-btn {
+            width: 100%;
+            background: #00ff9d;
+            color: #0a1a1a;
+            border: none;
+            border-radius: 16px;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #00e68a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 157, 0.3);
+        }
+
+        .apple-icon {
+            font-size: 24px;
+        }
+
+        .journey-box {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 18px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+
+        .journey-title {
+            color: #8a9a95;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            width: 38px;
+            height: 38px;
+            background: #00ff9d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: 900;
+            color: #0a1a1a;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            color: #8a9a95;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .activation-box {
+            background: rgba(20, 10, 10, 0.6);
+            border: 2px solid #ff4d6d;
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .important-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff4d6d, #ff6b88);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .important-badge::before {
+            content: '⚠';
+            margin-right: 4px;
+        }
+
+        .activation-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .lock-icon {
+            font-size: 24px;
+        }
+
+        .activation-title {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .activation-text {
+            color: #c0d4d1;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .activation-text .highlight {
+            color: #00ff9d;
+            font-weight: 700;
+        }
+
+        .footer-text {
+            color: #6a7a75;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Age Selection -->
+    <div class="container page-1" id="page1">
+        <div class="logo-container">
+            <div class="logo-wrapper">
+                <img src="images/tiktok-logo.png" alt="TikTok" class="tiktok-icon">
+            </div>
+            <div class="multiply">×</div>
+            <div class="logo-wrapper">
+                <img src="images/playful-logo.png" alt="Playful Rewards" class="playful-icon">
+            </div>
+        </div>
+
+        <h1>
+            <span class="title-get">Get Paid to</span><br>
+            <span class="title-scroll">Scroll</span>
+        </h1>
+
+        <p class="subtitle">
+            Join thousands earning daily by watching TikTok videos<br>
+            and cashing out instantly.
+        </p>
+
+        <button class="btn btn-primary" onclick="goToPage2()">
+            <div>I'm over 21</div>
+            <div class="btn-subtext">Instant Payouts: PayPal, CashApp, Venmo, Crypto & Wire</div>
+        </button>
+
+        <button class="btn btn-secondary" onclick="goToPage2()">
+            <div>I'm under 21</div>
+            <div class="btn-subtext">Limited Payouts: Wire Transfer Only</div>
+        </button>
+    </div>
+
+    <!-- Page 2: You're In -->
+    <div class="container page-2" id="page2">
+        <div class="logo-container" style="margin-bottom: 30px;">
+            <div class="logo-wrapper">
+                <img src="images/tiktok-logo.png" alt="TikTok" class="tiktok-icon">
+            </div>
+            <div class="multiply">×</div>
+            <div class="logo-wrapper">
+                <img src="images/playful-logo.png" alt="Playful Rewards" class="playful-icon">
+            </div>
+        </div>
+
+        <div class="checkmark-section">
+            <div class="checkmark">✓</div>
+            <div class="success-title">
+                <span class="gray">You're</span> <span class="green">In!</span>
+            </div>
+        </div>
+
+        <p class="success-subtitle">
+            Your account is pre-qualified for higher payouts.<br>
+            Download the app to activate full access.
+        </p>
+
+        <button class="download-btn" onclick="downloadApp()">
+            <span class="apple-icon"></span>
+            DOWNLOAD NOW
+        </button>
+
+        <div class="journey-box">
+            <div class="journey-title">YOUR EARNING JOURNEY</div>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Download the Playful App</h3>
+                    <p>Available on iOS & Android - Takes less than 60 seconds</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Complete Daily Offers</h3>
+                    <p>Watch Netflix, scroll TikTok, test apps & games, or take surveys!</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Cash Out Your Earnings</h3>
+                    <p>Instant Payouts: PayPal, CashApp, Venmo, Crypto & Wire</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="activation-box">
+            <div class="important-badge">IMPORTANT</div>
+            <div class="activation-header">
+                <div class="lock-icon">🔒</div>
+                <div class="activation-title">Activation Required</div>
+            </div>
+            <p class="activation-text">
+                New users: Complete <span class="highlight">2 quick offers</span> to unlock full access and start earning with TikTok videos.
+            </p>
+        </div>
+
+        <p class="footer-text">Trusted by over 500,000 users earning money daily</p>
+    </div>
+
+    <script>
+        function goToPage2() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.add('active');
+        }
+
+        function downloadApp() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://apps.apple.com/app/your-app-id';
+            } else {
+                window.location.href = 'https://play.google.com/store/apps/details?id=your.app.id';
+            }
+        }
+    </script>
+</body>
+</html>
